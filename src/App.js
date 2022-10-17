@@ -4,10 +4,23 @@ import axios from 'axios';
 
 function App() {
   const [dogs , updateDogs] = useState([]);
+  const [name, setName] = useState([]);
+  const [hobby, setHobby] = useState([])
+  useEffect(() => {
+    const fetchData = async () => {
+      const dogPicturesAPI = await axios(`https://dog.ceo/api/breeds/image/random`);
+      const randomNameAPI = await axios(`https://random-data-api.com/api/name/random_name`);
+      const activityAPI = await axios(`https://www.boredapi.com/api/activity`);
 
-  // fetch('https://dog.ceo/api/breeds/image/random')
-  //   .then((response) => response.json())
-  //     .then((data) => {updateDogs(data.results)})
+      updateDogs(dogPicturesAPI.data);
+      setName(randomNameAPI.data);
+      setHobby(activityAPI.data)
+    };
+
+    fetchData()
+
+  }, []);
+
 
 
   useEffect(() => {
@@ -15,12 +28,15 @@ function App() {
     .then (res => {
         updateDogs(res.data)
     })
-  }, [])
+  }, [],
+    )
 
   return (
     <div className="App">
 
-          <img src={dogs.message} alt=""></img>
+          <img src={dogs.message} alt="" style={{width: "300pt"}}></img>
+          <h1>{name.name}</h1>
+          <h2>{hobby.activity}</h2>
 
     </div>
   );
