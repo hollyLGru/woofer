@@ -6,12 +6,14 @@ function App() {
   const [dogs , updateDogs] = useState([]);
 
 
-  useEffect(() => {
-    axios.get(`https://dog.ceo/api/breeds/image/random`)
-    .then (res => {
-        updateDogs(res.data)
-    })
-  })
+  // useEffect(() => {
+  //   axios.get(`https://dog.ceo/api/breeds/image/random/`)
+  //   .then (res => {
+  //       updateDogs(res.data)
+  //   })
+  // })
+  //https://api-ninjas.com/api/dogs
+
 
   return (
     <div className="App">
