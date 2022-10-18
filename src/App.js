@@ -6,6 +6,8 @@ function App() {
   const [dogs , updateDogs] = useState([]);
   const [name, setName] = useState([]);
   const [hobby, setHobby] = useState([])
+
+  
   useEffect(() => {
     const fetchData = async () => {
       const dogPicturesAPI = await axios(`https://dog.ceo/api/breeds/image/random`);
@@ -21,15 +23,6 @@ function App() {
 
   }, []);
 
-
-
-  useEffect(() => {
-    axios.get(`https://dog.ceo/api/breeds/image/random/`)
-    .then (res => {
-        updateDogs(res.data)
-    })
-  }, [],
-    )
 
   return (
     <div className="App">
