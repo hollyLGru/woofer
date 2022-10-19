@@ -1,5 +1,4 @@
 import  {React, useState, useEffect } from 'react';
-import './App.css';
 import axios from 'axios';
 
 function DogUsers() {
@@ -28,7 +27,7 @@ function DogUsers() {
   return (
     <div className="App">
 
-          <img src={dogs.message} alt="" style={{width: "300pt"}}></img>
+          <img src={dogs.message} alt="" style={{borderRadius: "10px", width: "300pt"}}></img>
           <h1>{name.name}</h1>
           <h2>{hobby.activity}</h2>
 
