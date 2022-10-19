@@ -11,14 +11,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Woofer App!</h1>
-      {/* header */}
-      <Header/>
-      {/* user cards */}
-      {/* buttons */}
+        {/* header */}
+        <Header/>
+        {/* user cards */}
+        {/* buttons */}
 
-      {/* chat screen */}
-
+        {/* chat screen */}
     </div>
   );
 }
