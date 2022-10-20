@@ -16,6 +16,7 @@ function Header() {
             marginBottom: "2%",
             paddingBottom: "1%"
          }}>
+
             <IconButton>
                 <Link to="./Settings">
                     <SettingsIcon style={{color: "lightgrey"}}/>
@@ -27,7 +28,9 @@ function Header() {
             style={{width: "20%"}}/>
 
             <IconButton>
-                <ChatBubbleIcon style={{color: "lightgrey"}}/>
+                <Link to="./Messages">
+                    <ChatBubbleIcon style={{color: "lightgrey"}}/>
+                </Link>
             </IconButton>
         </div>
     )

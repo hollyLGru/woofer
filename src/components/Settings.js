@@ -5,7 +5,7 @@ function Settings() {
 
 
   return (
-    <div className="App">
+    <div className="Settings">
         <h1>Settings</h1>
     </div>
   );

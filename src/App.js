@@ -14,7 +14,6 @@ function App() {
 
           <BrowserRouter>
           <Header/>
-          {/* <DogUsers/> */}
           <Router></Router>
           </BrowserRouter>
         </div>
