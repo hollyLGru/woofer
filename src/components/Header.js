@@ -2,6 +2,7 @@ import React from 'react'
 import SettingsIcon from '@mui/icons-material/Settings';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import { IconButton } from '@mui/material';
+import { Link } from "react-router-dom";
 
 function Header() {
     
@@ -16,7 +17,9 @@ function Header() {
             paddingBottom: "1%"
          }}>
             <IconButton>
-                <SettingsIcon style={{color: "lightgrey"}}/>
+                <Link to="./Settings">
+                    <SettingsIcon style={{color: "lightgrey"}}/>
+                </Link>
             </IconButton>
             {/* wrapping the icons in icon button for clickable/hover effect!! very cool love it */}
 
