@@ -1,10 +1,7 @@
 import * as React from 'react';
 import  { useState, useEffect } from 'react';
 import axios from 'axios';
-
-import ClearIcon from '@mui/icons-material/Clear';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-
+import Buttons from "./Buttons"
 
 
 function DogUsers() {
@@ -45,10 +42,7 @@ function DogUsers() {
           <h2>{name.name}</h2>
           <h3>{hobby.activity}</h3>
 
-      <div style={{color: "#FD6B6B", display: "flex", justifyContent: "space-evenly"}}>
-        <ClearIcon style={{fontSize: "500%", borderRadius: "100%", border: "8px solid lightgrey"}} />
-        <FavoriteIcon style={{color: "#4FCC94", fontSize: "500%", borderRadius: "100%", border: "8px solid lightgrey"}}/>
-      </div>
+      <Buttons/>
     </div>
   );
 }
