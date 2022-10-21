@@ -8,7 +8,10 @@ import StarIcon from '@mui/icons-material/Star';
 
 
 
-function Buttons() {
+function Buttons(props) {
+const [likedDogs, setLikedDogs] = useState([]);
+const [dislikedDogs, setDislikedDogs] = useState([]);
+const [superLikedDogs, setSuperLikedDogs] = useState([]);
 
 
   return (
@@ -16,7 +19,7 @@ function Buttons() {
         <ReplayIcon style={{color: "#FDCD5F", margin: "-2", fontSize: "270%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
         <ClearIcon style={{margin: "-2", color: "#FD6B6B", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}} />
         <FavoriteIcon style={{margin: "-2", color: "#4FCC94", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
-        <StarIcon style={{color: "#2EB3C9", margin: "-2",fontSize: "270%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
+        <StarIcon style={{color: "#2EB3C9", margin: "-2",fontSize: "270%", borderRadius: "100%", border: "8px solid #F4F4F49"}}/>
     </div>
   );
 }
