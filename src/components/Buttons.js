@@ -13,6 +13,10 @@ const [likedDogs, setLikedDogs] = useState([]);
 const [dislikedDogs, setDislikedDogs] = useState([]);
 const [superLikedDogs, setSuperLikedDogs] = useState([]);
 
+// how to push to array : 
+// dont: const likedogs = [] , likeddogs.push("Buster Dog")
+// do: setLikedDogs([...likedDog], "Buster Dog")
+
 
   return (
     <div style={{ display: "flex", justifyContent: "center"}}>
