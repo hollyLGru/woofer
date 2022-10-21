@@ -37,7 +37,7 @@ function DogUsers() {
             border: "1px solid lightgrey"
             }}></img>
           <h2>{name.name}</h2>
-          <h3>I like to {hobby.activity}</h3>
+          <h3>I would like to {hobby.activity}</h3>
 
       <Buttons/>
     </div>
