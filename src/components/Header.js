@@ -3,6 +3,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import { IconButton } from '@mui/material';
 import { Link } from "react-router-dom";
+import HomeIcon from '@mui/icons-material/Home';
 
 function Header() {
     

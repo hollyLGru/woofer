@@ -1,12 +1,12 @@
 import  React from 'react';
-
+import Avatar from "@material-ui/core/Avatar"
 
 function Messages() {
 
 
   return (
     <div className="Messages">
-        <h1>Messages</h1>
+        <Avatar />
     </div>
   );
 }
