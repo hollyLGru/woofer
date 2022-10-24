@@ -1,14 +1,24 @@
 import * as React from 'react';
 import  { useState, useEffect } from 'react';
 import axios from 'axios';
-import Buttons from "./Buttons"
-
+import ClearIcon from '@mui/icons-material/Clear';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ReplayIcon from '@mui/icons-material/Replay';
+import StarIcon from '@mui/icons-material/Star';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 function DogUsers() {
   const [dogs , updateDogs] = useState([]);
   const [name, setName] = useState([]);
   const [hobby, setHobby] = useState([])
+  const [isHidden, setIsHidden] = useState(true);
 
+  // const [likedDogs, setLikedDogs] = useState([]);
+  // const [dislikedDogs, setDislikedDogs] = useState([]);
+  // const [superLikedDogs, setSuperLikedDogs] = useState([]);
+
+  let gender = ["Male", "Female"];
+  let age = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12, 13, 14, 15]
   
   useEffect(() => {
     const fetchData = async () => {
@@ -27,19 +37,33 @@ function DogUsers() {
 
 
   return (
-    <div className="Dogs">
-
-          <img src={dogs.message} alt="" style={{
+    <div className="Dogs" style={{width: "300pt", paddingBottom: "5%"}}>
+          <img src={dogs.message} key={dogs.message} alt="" style={{
             borderRadius: "10px", 
             objectFit: "cover", 
             width: "300pt", 
             height: "300pt", 
-            border: "1px solid lightgrey"
-            }}></img>
-          <h2>{name.name}</h2>
-          <h3>I would like to {hobby.activity}</h3>
+            border: "1px solid lightgrey",
+            boxShadow: "0px 18px 53px 0px grey",
+            marginBottom: "5%"
+            }}/>
 
-      <Buttons/>
+          <h2 onClick={() => setIsHidden(!isHidden)}>{name.name}</h2>
+
+          {isHidden ? "" : 
+          <div>
+            <h3> {gender[Math.floor(Math.random() * gender.length)]}, {age[Math.floor(Math.random() * age.length)]}</h3>
+            <h3>Hobby: I would like to {hobby.activity}</h3>
+          </div>} 
+          
+
+
+        <div style={{ display: "flex", justifyContent: "center", width: "300pt", marginTop: "5%"}}>
+          <ReplayIcon style={{color: "#FDCD5F", margin: "-1", fontSize: "270%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
+          <ClearIcon style={{margin: "-1", color: "#FD6B6B", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}} />
+          <FavoriteIcon style={{margin: "-1", color: "#4FCC94", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
+          <StarIcon style={{borderRadius: "100%", border: "8px solid #F4F4F4", color: "#2EB3C9", margin: "-1",fontSize: "270%"}}/>
+        </div>
     </div>
   );
 }

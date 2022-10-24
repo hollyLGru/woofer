@@ -9,7 +9,7 @@ function App() {
 
 
   return (
-    <div className="App" style={{width: "400pt", display:"flex", justifyContent:"center", margin: "auto" }}>
+    <div className="App" style={{borderRadius: "10px", width: "400pt", display:"flex", justifyContent:"center", margin: "auto"}}>
         <div>
 
           <BrowserRouter>
