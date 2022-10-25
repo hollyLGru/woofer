@@ -17,6 +17,8 @@ function DogUsers() {
   // const [superLikedDogs, setSuperLikedDogs] = useState([]);
   console.log(likedDogs)
 
+  // create a script with event listener, save liked dogs into local storage, 
+
 
   let gender = ["Male", "Female"];
   let age = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12, 13, 14, 15]
@@ -37,6 +39,10 @@ function DogUsers() {
 
   }, []);
 
+  function likeThisDog() {
+    console.log(hobby.activity, dogs.message, name.name)
+    // creat object store to local storage fsds
+  };
 
   return (
     <div className="Dogs" style={{width: "300pt", paddingBottom: "5%"}}>
@@ -51,26 +57,26 @@ function DogUsers() {
             }}/>
 
           <h2 onClick={() => setIsHidden(!isHidden)}>{name.name}</h2>
-
           {isHidden ? "" : 
           <div style={{color: "grey"}}>
             <h3> {gender[Math.floor(Math.random() * gender.length)]}, {age[Math.floor(Math.random() * age.length)]}</h3>
-            <h3>First Date Idea: I would like to {hobby.activity} with you</h3>
+            <br></br>
+            <h3>I would like to...  "{hobby.activity} with you"</h3>
           </div>} 
           
-
 
         <div style={{ display: "flex", justifyContent: "center", width: "300pt", marginTop: "5%"}}>
           <ReplayIcon style={{color: "#FDCD5F", margin: "-1", fontSize: "270%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
           <ClearIcon style={{margin: "-1", color: "#FD6B6B", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}} />
+
+
+
           <FavoriteIcon style={{margin: "-1", color: "#4FCC94", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
-          <StarIcon style={{borderRadius: "100%", border: "8px solid #F4F4F4", color: "#2EB3C9", margin: "-1",fontSize: "270%"}}/>
+
+
+
+          <StarIcon onClick={likeThisDog()} style={{borderRadius: "100%", border: "8px solid #F4F4F4", color: "#2EB3C9", margin: "-1",fontSize: "270%"}}/>
         </div>
-        {/* <div>
-          {likedDogs.map(() => (
-            <img src={{}}/>
-          ))}
-        </div> */}
     </div>
   );
 }
