@@ -56,7 +56,7 @@ function DogUsers() {
             marginBottom: "5%"
             }}/>
 
-          <h2 onClick={() => setIsHidden(!isHidden)}>{name.name}</h2>
+          <h2 onClick={() => setIsHidden(!isHidden)}>{name.name} more info</h2>
           {isHidden ? "" : 
           <div style={{color: "grey"}}>
             <h3> {gender[Math.floor(Math.random() * gender.length)]}, {age[Math.floor(Math.random() * age.length)]}</h3>
