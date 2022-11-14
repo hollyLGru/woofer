@@ -68,14 +68,8 @@ function DogUsers() {
         <div style={{ display: "flex", justifyContent: "center", width: "300pt", marginTop: "5%"}}>
           <ReplayIcon style={{color: "#FDCD5F", margin: "-1", fontSize: "270%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
           <ClearIcon style={{margin: "-1", color: "#FD6B6B", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}} />
-
-{/* hehhgudsfsdfdsfy */}
-
           <FavoriteIcon style={{margin: "-1", color: "#4FCC94", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
-
-
-
-          <StarIcon onClick={likeThisDog()} style={{borderRadius: "100%", border: "8px solid #F4F4F4", color: "#2EB3C9", margin: "-1",fontSize: "270%"}}/>
+          <StarIcon style={{borderRadius: "100%", border: "8px solid #F4F4F4", color: "#2EB3C9", margin: "-1",fontSize: "270%"}}/>
         </div>
     </div>
   );
