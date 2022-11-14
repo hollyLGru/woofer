@@ -29,14 +29,11 @@ function DogUsers() {
       const dogPicturesAPI = await axios(`https://dog.ceo/api/breeds/image/random`);
       const randomNameAPI = await axios(`https://random-data-api.com/api/name/random_name`);
       const activityAPI = await axios(`https://www.boredapi.com/api/activity`);
-
-      updateDogs(dogPicturesAPI.data);
-      setName(randomNameAPI.data);
-      setHobby(activityAPI.data)
+        updateDogs(dogPicturesAPI.data);
+        setName(randomNameAPI.data);
+        setHobby(activityAPI.data)
     };
-
     fetchData()
-
   }, []);
 
   function likeThisDog() {
