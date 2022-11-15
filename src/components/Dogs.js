@@ -12,7 +12,7 @@ function DogUsers() {
   const [hobby, setHobby] = useState([])
   const [isHidden, setIsHidden] = useState(true);
 
-  const [likedDogs, setLikedDogs] = useState({name: '', image: '', hobby: ''});
+  const [likedDogs, setLikedDogs] = useState(false);
   // const [dislikedDogs, setDislikedDogs] = useState([]);
   // const [superLikedDogs, setSuperLikedDogs] = useState([]);
   console.log(likedDogs)
@@ -36,13 +36,11 @@ function DogUsers() {
     fetchData()
   }, []);
 
-  function likeThisDog() {
-    console.log(hobby.activity, dogs.message, name.name)
-    // creat object store to local storage fsds
-  };
 
   return (
     <div className="Dogs" style={{width: "300pt", paddingBottom: "5%"}}>
+
+          { likedDogs ? <h1>LIKE</h1> : <h1></h1>  }
           <img src={dogs.message} alt="" style={{
             borderRadius: "10px", 
             objectFit: "cover", 
@@ -65,8 +63,8 @@ function DogUsers() {
         <div style={{ display: "flex", justifyContent: "center", width: "300pt", marginTop: "5%"}}>
           <ReplayIcon style={{color: "#FDCD5F", margin: "-1", fontSize: "270%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
           <ClearIcon style={{margin: "-1", color: "#FD6B6B", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}} />
-          <FavoriteIcon style={{margin: "-1", color: "#4FCC94", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
-          <StarIcon onClick={likeThisDog()} style={{borderRadius: "100%", border: "8px solid #F4F4F4", color: "#2EB3C9", margin: "-1",fontSize: "270%"}}/>
+          <FavoriteIcon onClick={() => setLikedDogs(true)} style={{margin: "-1", color: "#4FCC94", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
+          <StarIcon style={{borderRadius: "100%", border: "8px solid #F4F4F4", color: "#2EB3C9", margin: "-1",fontSize: "270%"}}/>
         </div>
     </div>
   );
