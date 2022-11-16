@@ -30,7 +30,7 @@ function DogUsers() {
       setHobby(activityAPI.data)
   }
 
-  useEffect(() => {
+  useEffect(() => {;
     const fetchData = async () => {
       const dogPicturesAPI = await axios(`https://dog.ceo/api/breeds/image/random`);
       const randomNameAPI = await axios(`https://random-data-api.com/api/name/random_name`);
@@ -40,12 +40,22 @@ function DogUsers() {
         setHobby(activityAPI.data)
     };
     fetchData();
+    
   }, []);
 
   const likeDog = () => {
     setLikedDogs(!likedDogs);
-    fetchData()
+    fetchData();
   }
+
+  useEffect(() =>{
+    console.log("button was clicked");
+    return () => {
+       likedDogs ? setLikedDogs(!likedDogs) : setLikedDogs(likedDogs)  
+    }
+
+  })
+
 
   const dislikeDog = () => {
     setDislikedDogs(!dislikedDogs);
