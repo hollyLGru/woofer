@@ -27,10 +27,20 @@ function DogUsers() {
     const activityAPI = await axios(`https://www.boredapi.com/api/activity`);
       updateDogs(dogPicturesAPI.data);
       setName(randomNameAPI.data);
-      setHobby(activityAPI.data)
+      setHobby(activityAPI.data);
+      stopLikeDog();
+      stopDislikeDog();
   }
 
-  useEffect(() => {;
+  const stopLikeDog = () => {
+    setLikedDogs(likedDogs);
+  }
+
+  const stopDislikeDog = () => {
+    setDislikedDogs(dislikedDogs);
+  }
+
+  useEffect(() => {
     const fetchData = async () => {
       const dogPicturesAPI = await axios(`https://dog.ceo/api/breeds/image/random`);
       const randomNameAPI = await axios(`https://random-data-api.com/api/name/random_name`);
@@ -48,18 +58,10 @@ function DogUsers() {
     fetchData();
   }
 
-  useEffect(() =>{
-    console.log("button was clicked");
-    return () => {
-       likedDogs ? setLikedDogs(!likedDogs) : setLikedDogs(likedDogs)  
-    }
-
-  })
-
-
   const dislikeDog = () => {
     setDislikedDogs(!dislikedDogs);
     fetchData()
+
   }
 
   return (
