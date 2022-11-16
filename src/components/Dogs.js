@@ -20,8 +20,16 @@ function DogUsers() {
 
   let gender = ["Male", "Female"];
   let age = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12, 13, 14, 15]
-
   
+  const fetchData = async () => {
+    const dogPicturesAPI = await axios(`https://dog.ceo/api/breeds/image/random`);
+    const randomNameAPI = await axios(`https://random-data-api.com/api/name/random_name`);
+    const activityAPI = await axios(`https://www.boredapi.com/api/activity`);
+      updateDogs(dogPicturesAPI.data);
+      setName(randomNameAPI.data);
+      setHobby(activityAPI.data)
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       const dogPicturesAPI = await axios(`https://dog.ceo/api/breeds/image/random`);
@@ -31,12 +39,24 @@ function DogUsers() {
         setName(randomNameAPI.data);
         setHobby(activityAPI.data)
     };
-    fetchData()
+    fetchData();
   }, []);
 
+  const likeDog = () => {
+    setLikedDogs(!likedDogs);
+    fetchData()
+  }
+
+  const dislikeDog = () => {
+    setDislikedDogs(!dislikedDogs);
+    fetchData()
+  }
 
   return (
     <div className="Dogs" style={{width: "300pt", paddingBottom: "5%"}}>
+
+
+      {/* Dog Image */}
           <img src={dogs.message} alt="" style={{
             borderRadius: "10px", 
             objectFit: "cover", 
@@ -47,8 +67,13 @@ function DogUsers() {
             marginBottom: "5%"
             }}/>
 
+
+{/* Like or not like  */}
           { likedDogs ? <LikeButton/> : <div/>  }
           { dislikedDogs ? <DislikeButton/> : <div/>  }
+
+
+        {/* hidden info about dogs */}
           <h2 onClick={() => setIsHidden(!isHidden)}>{name.name} </h2>
           {isHidden ? "" : 
           <div style={{color: "grey"}}>
@@ -56,12 +81,13 @@ function DogUsers() {
             <br></br>
             <h3>I would like to...  "{hobby.activity} with you"</h3>
           </div>} 
-          
 
+
+            {/* buttons */}
         <div style={{ display: "flex", justifyContent: "center", width: "300pt", marginTop: "5%"}}>
           <ReplayIcon style={{color: "#FDCD5F", margin: "-1", fontSize: "270%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
-          <ClearIcon onClick={() => setDislikedDogs(!dislikedDogs)} style={{margin: "-1", color: "#FD6B6B", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}} />
-          <FavoriteIcon onClick={() => setLikedDogs(!likedDogs)} style={{margin: "-1", color: "#4FCC94", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
+          <ClearIcon onClick={dislikeDog} style={{margin: "-1", color: "#FD6B6B", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}} />
+          <FavoriteIcon onClick={likeDog} style={{margin: "-1", color: "#4FCC94", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
           <StarIcon style={{borderRadius: "100%", border: "8px solid #F4F4F4", color: "#2EB3C9", margin: "-1",fontSize: "270%"}}/>
         </div>
     </div>
