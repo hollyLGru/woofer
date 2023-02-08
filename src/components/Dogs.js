@@ -35,7 +35,6 @@ function DogUsers() {
   const stopLikeDog = () => {
     setLikedDogs(likedDogs);
   }
-
   const stopDislikeDog = () => {
     setDislikedDogs(dislikedDogs);
   }
@@ -53,14 +52,25 @@ function DogUsers() {
     
   }, []);
 
+  const [arrayOfLikedDogs] = useState([
+    {name: '',
+  image: ''}
+  ]);
+
+
   const likeDog = () => {
     setLikedDogs(!likedDogs);
     fetchData();
+    console.log("you liked " + name.name + dogs.message)
+    let newObj = {name: name.name, image: dogs.message};
+    arrayOfLikedDogs.push(newObj);
+    console.log(arrayOfLikedDogs)
   }
 
   const dislikeDog = () => {
     setDislikedDogs(!dislikedDogs);
-    fetchData()
+    fetchData();
+    console.log("you disliked " + name.name)
   }
 
   return (
@@ -80,7 +90,7 @@ function DogUsers() {
 
 
           {/* Like or not like  */}
-          { likedDogs ? <LikeButton/> : <div/>  }
+          { likedDogs ? <LikeButton /> : <div/>  }
           { dislikedDogs ? <DislikeButton/> : <div/>  }
 
 
@@ -101,6 +111,13 @@ function DogUsers() {
           <FavoriteIcon onClick={likeDog} style={{margin: "-1", color: "#4FCC94", fontSize: "500%", borderRadius: "100%", border: "8px solid #F4F4F4"}}/>
           <StarIcon style={{borderRadius: "100%", border: "8px solid #F4F4F4", color: "#2EB3C9", margin: "-1",fontSize: "270%"}}/>
         </div>
+
+        <br></br>
+        <p>I like: {arrayOfLikedDogs.map((dog, index) => {
+          return (
+            <h1>{dog.name} <img alt="dog" src={dog.image}></img></h1>
+          )
+        })}</p>
     </div>
   );
 }
