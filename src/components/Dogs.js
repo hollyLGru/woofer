@@ -61,7 +61,6 @@ function DogUsers() {
   const dislikeDog = () => {
     setDislikedDogs(!dislikedDogs);
     fetchData()
-
   }
 
   return (
@@ -80,7 +79,7 @@ function DogUsers() {
             }}/>
 
 
-{/* Like or not like  */}
+          {/* Like or not like  */}
           { likedDogs ? <LikeButton/> : <div/>  }
           { dislikedDogs ? <DislikeButton/> : <div/>  }
 
