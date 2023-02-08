@@ -90,7 +90,7 @@ function DogUsers() {
           <div style={{color: "grey"}}>
             <h3> {gender[Math.floor(Math.random() * gender.length)]}, {age[Math.floor(Math.random() * age.length)]}</h3>
             <br></br>
-            <h3>I would like to...  "{hobby.activity} with you"</h3>
+            <h3>I would like to....  "{hobby.activity} with you"</h3>
           </div>} 
 
 
