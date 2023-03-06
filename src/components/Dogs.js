@@ -112,12 +112,12 @@ function DogUsers() {
           <StarIcon style={{borderRadius: "100%", border: "8px solid #F4F4F4", color: "#2EB3C9", margin: "-1",fontSize: "270%"}}/>
         </div>
 
-        <br></br>
+        {/* <br></br>
         <p>I like: {arrayOfLikedDogs.map((dog, index) => {
           return (
             <h1>{dog.name} <img alt="dog" src={dog.image}></img></h1>
           )
-        })}</p>
+        })}</p> */}
     </div>
   );
 }
